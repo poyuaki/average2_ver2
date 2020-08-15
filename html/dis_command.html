@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>平均値を求めるアプリjs版</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <h1 class="header_title">平均値を求めるアプリ<span class="br_phone"><br></span>js版</h1>
+            </div>
+        </header>
+        <main>
+            <div class="dis_title">
+                <h2>コマンドモードについて</h2>
+            </div>
+            <div class="dis_comment">
+                <p>
+                    このアプリでは、コマンドモードという機能が使えます。
+                    コマンドモードを使うことによって通常の時よりもより細かい操作が、キーボード上で行えます。
+                    Ctrl(MacならControl）を押すことによってコマンドモードの切り替えができます。
+                    上部にある「command:」のところで、今どんな状態かみることができます。
+                    <span class="dis_att">なお、キーボード入力の行えないスマートフォンなどはこの機能が使えません。</span>
+                    プログラムの方では制限をかけてはいませんが、正確な動作を保証することはできません。
+                </p>
+            </div>
+            <div class="command_view">
+                <ul>
+                    <li><p>C：現在入力している数字をクリアにします</p></li>
+                    <li><p>上/下矢印：下部にある、今までのデータ一覧から、変更したいデータを選択することができます（※1）</p></li>
+                    <li><p>D：最初に、下部にある今までのデータ一覧から、対応するindex（一番最初が0で、そこから1ずつ増える）を入力し、Dを押すことでそれに対応するデータが削除されます</p></li>
+                    <li><p>K：今までのデータを全て削除します。間違って押してしまっても戻れるように、確認アラートが出ます</p></li>
+                </ul>
+            </div>
+            <div class="annotation">
+                <p>※1：入力中にこの動作をした場合でも、一番トップから上矢印を押すことで入力していた値を表示、変更することができます</p>
+            </div>
+            <div class="dis_comment">
+                <p>
+                    なお、1桁削除や、確定はコマンドモードなしでも、それぞれバックスペースキー、エンターキーで行えます。また、数値の入力に関しても、キーボード上で行えます
+                </p>
+            </div>
+        </main>
+    </body>
+</html>
