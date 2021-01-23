@@ -27,14 +27,19 @@ function CalcAve(){     //平均値を求める関数
     }
     if(sum != 0){
         var result = Math.round((sum / len) * Math.pow(10,digit)) / Math.pow(10,digit);     //平均値を求める（digitの値によって四捨五入する桁数が変化）
-        document.getElementById("view_sum").innerHTML = sum;
+        if(sum != 0){
+            var view_sum = Math.round(sum * Math.pow(10,digit)) / Math.pow(10,digit);
+        }else{
+            var view_sum = 0;
+        }
+        document.getElementById("view_sum").innerHTML = view_sum;
     }else{
         var result = 0;
         document.getElementById("view_sum").innerHTML = 0;
     }
     if(isNaN(result)){      //もしもresultになにかしらのエラーが発生したら
         result = 0;     //もうデバッグがめんどくさいんで強制的に0に変えますごめんね
-        ViewAtt("内部で例外処理が行われました。エラーコードを記載の上、GitHub、またはTwitterにて報告してくださると助かります<br>エラーコード：v-35");
+        ViewError("内部で例外処理が行われました。エラーコードを記載の上、GitHub、またはTwitterにて報告してくださると助かります<br>エラーコード：v-35");
     }
     document.getElementById("view_ave").innerHTML = result;     //平均値の表示
 }

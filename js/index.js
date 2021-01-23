@@ -30,21 +30,14 @@ function handleTouchMove(event) {       //ディスプレイに関するイベ�
     event.preventDefault();
 }
 
-function ViewError(comment){        //何かしらのエラーが出た際、UIによってユーザに伝える必要がある場合の関数
+let ViewError = comment =>{
     document.getElementById("error_co").innerHTML = comment;        //引数のコメントの表示
     setTimeout(function(){
         document.getElementById("error_co").innerHTML = "";     //3000msたったら元に戻す
     },3000);        //3000ミリ秒（3秒）間表示
 }
 
-function ViewAtt(comment){      //何かしらの例外処理が出た際、UIによってユーザに伝える必要がある場合の関数
-    document.getElementById("error_att").innerHTML = comment;        //引数のコメントの表示
-    setTimeout(function(){
-        document.getElementById("error_att").innerHTML = "";     //10000msたったら元に戻す
-    },10000);        //10000ミリ秒（10秒）間表示
-}
-
-function CheckNum(number){      //入力値が適切か判断し、コードを返す関数
+let CheckNum = number =>{      //入力値が適切か判断し、コードを返す関数
 /*
 1~：何かしらのエラー
 0：正常
@@ -83,7 +76,6 @@ function NumberView(){      //入力値の表示を行う関数
     var decimal_list = [];      //小数部分の数をいれる配列
     for(i = 0;i < len;i++){     //表示する桁に変換
         if(input_number[i] == "."){     //もしiが小数点だったら
-            console.log("ここ通過");
             is_decimal = true;      //小数がある
             decimal_list = input_number.slice(i + 1);       //input_numberから小数点よりあとの数値（＝小数部分）をdecimal_listに代入
             decimal_index = i;      //小数点があるindexを記憶

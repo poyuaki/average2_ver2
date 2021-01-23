@@ -158,6 +158,10 @@ html {
     color: red;
 }
 
+.enter_char{
+    color: #ee827c;
+}
+
 @media(max-width:576px){    /*スマホ用レイアウト*/
     .br_phone{
         display: block;
